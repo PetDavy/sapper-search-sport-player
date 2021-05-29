@@ -1,0 +1,1 @@
+<h1 class="title is-1 mgt-medium has-text-centered">ABOUT</h1>
