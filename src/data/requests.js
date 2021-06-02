@@ -58,6 +58,15 @@ async function getUserCountry() {
   return responseLocation.data.country.name;
 }
 
+async function getTeams(name) {
+  const teamUrl =  `https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${name}`;
+
+  const responseData = await axios.get(teamUrl);
+
+  return responseData.data.teams;
+}
+
 export default {
   getleagueEvents,
+  getTeams,
 }
