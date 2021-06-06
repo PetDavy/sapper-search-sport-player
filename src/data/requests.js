@@ -66,7 +66,16 @@ async function getTeams(name) {
   return responseData.data.teams;
 }
 
+async function getTeamById(id) {
+  const teamUrl = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${id}`
+
+  const responseData = await axios.get(teamUrl);
+
+  return responseData.data.teams[0];
+}
+
 export default {
   getleagueEvents,
   getTeams,
+  getTeamById,
 }

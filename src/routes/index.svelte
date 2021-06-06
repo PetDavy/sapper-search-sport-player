@@ -50,6 +50,26 @@
     }
   }
 
+  async function searchById(event) {
+    const { id } = event.detail;
+
+    const teamData = await requests.getTeamById(id);
+
+    if (teamData) {
+      if (foundItems.find(team => team.idTeam === teamData.idTeam)) {
+        return;
+      }
+
+      foundItems = [
+        teamData,
+        ...foundItems
+      ]
+
+      isNotFound = false;
+      options = [];
+    }
+  }
+
   function removeTeam(event) {
     const { id } = event.detail;
 
@@ -66,7 +86,7 @@
 
 <SearchBar on:search={search} />
 {#if options.length}
-  <Options {options} />
+  <Options {options} on:searchById={searchById} />
 {/if}
 <CardContainer {foundItems} {isNotFound} on:removeTeam={removeTeam}/>
 <EventsCountainer {latestEvents} />

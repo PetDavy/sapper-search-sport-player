@@ -57,13 +57,5 @@
 			</li>
 		</div>
 	</ul>
-
-	<div class="navbar-end">
-		<div class="navbar-item">
-			<h3 class="title is-4">
-				{segment? segment: 'home'}
-			</h3>
-		</div>
-	</div>
 </nav>
 

@@ -76,7 +76,7 @@
     </div>
 
     <div class="content">
-      To fined out more <a href="/">Click Hear</a>
+      To fined out more <a href={`/teamid=${item.idTeam}`}>Click Hear</a>
     </div>
   </div>
 </div>
