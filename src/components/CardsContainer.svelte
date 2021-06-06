@@ -24,10 +24,10 @@
   </div>
 {/if}
 
-{#if Object.keys(foundItems)}
+{#if foundItems.length}
   <div class="container">
-    {#each Object.keys(foundItems) as key}
-      <Card item={foundItems[key]} />
+    {#each foundItems as item (item.idTeam)}
+      <Card {item} on:removeTeam />
     {/each}
   </div>
 {/if}

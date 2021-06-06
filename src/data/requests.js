@@ -13,7 +13,7 @@ async function getleagueEvents() {
     
     if (location) {
       leagues.unshift(location);
-      Cookies.set('location', location, { expires: 30 });
+      Cookies.set('location', location);
     }
   }
 
